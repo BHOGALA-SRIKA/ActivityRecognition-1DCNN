@@ -42,12 +42,22 @@ Training on single CPU.
 
 Training finished: Max epochs completed.
 
-<img width="1166" height="568" alt="image" src="https://github.com/user-attachments/assets/2df6512b-0383-4332-baae-18b51e169799" />
+Epoch: 15 of 15
 
-Final Model Accuracy: 69.19%
+Iteration: 1710 of 1710 
+
+Iterations per Epoch: 114
+
+<img width="829" height="527" alt="image" src="https://github.com/user-attachments/assets/845b2af6-4eda-4f48-8f78-fdb3d1fac14c" />
 
 
-<img width="504" height="378" alt="image" src="https://github.com/user-attachments/assets/cdcbe9f7-34b0-4992-9415-5bea5e670d95" />
+
+Final Model Accuracy: 91.92%
+
+
+<img width="504" height="378" alt="image" src="https://github.com/user-attachments/assets/454c60be-f2bc-4098-bd90-0670e9ce6169" />
+
+
 
 
   

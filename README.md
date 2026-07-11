@@ -1,12 +1,9 @@
-# Solution to MATLAB and Simulink Challenge project <'project number'> <'Project Title'>
-This is a template repo for MATLAB and Simulink Challenge Project solutions.
+# Solution to MATLAB and Simulink Challenge project #232 : Human Motion Recognition Using IMUs
 
-Please add the following items:
 
 [Program link](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub)
 
-[Project description link]<Add link to the project description from the list of projects above>
-
+[Project #232 Description](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub/tree/main/projects/Human%20Motion%20Recognition%20Using%20IMUs)
 
 # Project details
 This implementation leverages deep learning to automate human activity classification. The core architecture consists of:
@@ -17,14 +14,14 @@ Dimensionality Reduction: Global Average Pooling to reduce parameter count and m
 
 Classification: Fully Connected layers mapping extracted features to the six distinct activity classes.
 
-Preprocessing: Robust normalization using training statistics to ensure model stability across varying sensor inputs.
+Preprocessing: Robust normalization using training statistics to ensure model stability across varying sensor inputs. All 9 inertial signal channels (body acceleration, body gyroscope, and total acceleration, each along x/y/z axes) are used as multi-channel input to the network.
+
 
 # How to run section
 Prerequisites:
-
-MATLAB (R2023b or later recommended)
-
-Deep Learning Toolbox
+- MATLAB (R2023b or later recommended)
+- Deep Learning Toolbox
+- Statistics and Machine Learning Toolbox
 
 Steps:
 1. Clone the repository:
@@ -36,7 +33,9 @@ Steps:
 
 3. Run the script: Open ```src/main.mlx``` in the Live Editor and click Run.
 
-4. The script will automatically load the data, train the model, and display the final classification accuracy along with a confusion matrix.
+4. The script will automatically load the data, train the model, save the trained network to `models/trained_net.mat`, and display the final classification accuracy along with a confusion matrix.
+   
+5. To verify results without retraining, open `tests/verify_pipeline.m` and run it — it loads the saved model and reports a PASS/FAIL against a minimum accuracy threshold.
 
 # Demo/Results
 Training on single CPU.
@@ -56,3 +55,6 @@ Final Model Accuracy: 69.19%
 1. **Dataset:** Anguita, D., et al. (2013). "A Public Domain Dataset for Human Activity Recognition Using Smartphones." ESANN 2013.
 2. **Methodology:** Kiranyaz, S., et al. (2015). "Real-Time Patient-Specific ECG Classification by 1D Convolutional Neural Networks." IEEE Transactions on Biomedical Engineering.
 3. **Tools:** MathWorks, "Deep Learning Toolbox," [Online]. Available: https://www.mathworks.com/help/deeplearning/
+
+## AI Assistance
+Generative AI was used to help debug data reshaping logic, restructure the model to use all 9 IMU signal channels instead of one, and draft the verification test script. All code was reviewed, tested, and understood before inclusion, per the program's Generative AI Guidelines.

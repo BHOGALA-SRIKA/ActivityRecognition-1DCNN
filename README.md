@@ -1,4 +1,4 @@
-# Solution to MATLAB and Simulink Challenge project #232 : Human Motion Recognition Using IMUs
+# Solution to MATLAB-Simulink Challenge - Project #232 : Human Motion Recognition Using IMUs
 
 
 [Program link](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub)

@@ -73,7 +73,7 @@ Final Model Accuracy: 91.92%
 
 
 ## Full Report
-A detailed project report including methodology, architecture, results, and limitations is available in [`docs/report`](docs/report.docx).
+A detailed project report including methodology, architecture, results, and limitations is available in [`docs/report`](docs/report.pdf).
 
 
 ## AI Assistance

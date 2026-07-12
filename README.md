@@ -1,4 +1,5 @@
-# Solution to MATLAB-Simulink Challenge - Project #232 : Human Motion Recognition Using IMUs
+# Solution to MATLAB-Simulink Challenge 
+# Project #232 : Human Motion Recognition Using IMUs
 
 
 [Program link](https://github.com/mathworks/MATLAB-Simulink-Challenge-Project-Hub)
@@ -15,6 +16,11 @@ Dimensionality Reduction: Global Average Pooling to reduce parameter count and m
 Classification: Fully Connected layers mapping extracted features to the six distinct activity classes.
 
 Preprocessing: Robust normalization using training statistics to ensure model stability across varying sensor inputs. All 9 inertial signal channels (body acceleration, body gyroscope, and total acceleration, each along x/y/z axes) are used as multi-channel input to the network.
+
+
+# Methodology
+
+This project applies a 1D Convolutional Neural Network (1D-CNN) to classify human activities from smartphone IMU signals, following the general approach of Kiranyaz et al. (2015), who demonstrated 1D-CNNs as effective for extracting temporal patterns directly from raw time-series sensor data without hand-crafted features. The network takes all 9 inertial signal channels (body acceleration, body gyroscope, and total acceleration, each along x/y/z) as multi-channel input sequences of length 128. Two convolutional blocks (convolution + batch normalization + ReLU) extract local temporal features, followed by global average pooling to reduce dimensionality and limit overfitting, and fully connected layers that map features to the six activity classes (walking, walking upstairs, walking downstairs, sitting, standing, laying). Training used stochastic gradient descent with momentum (SGDM), a learning rate of 0.01, batch size 64, over 15 epochs. Input features were normalized channel-wise using training-set mean and standard deviation, applied identically to the test set to prevent data leakage.
 
 
 # How to run section
@@ -59,12 +65,16 @@ Final Model Accuracy: 91.92%
 
 
 
-
   
 # References
 1. **Dataset:** Anguita, D., et al. (2013). "A Public Domain Dataset for Human Activity Recognition Using Smartphones." ESANN 2013.
 2. **Methodology:** Kiranyaz, S., et al. (2015). "Real-Time Patient-Specific ECG Classification by 1D Convolutional Neural Networks." IEEE Transactions on Biomedical Engineering.
 3. **Tools:** MathWorks, "Deep Learning Toolbox," [Online]. Available: https://www.mathworks.com/help/deeplearning/
+
+
+## Full Report
+A detailed project report including methodology, architecture, results, and limitations is available in [`docs/report`](docs/report.docx).
+
 
 ## AI Assistance
 Generative AI was used to help debug data reshaping logic, restructure the model to use all 9 IMU signal channels instead of one, and draft the verification test script. All code was reviewed, tested, and understood before inclusion, per the program's Generative AI Guidelines.
